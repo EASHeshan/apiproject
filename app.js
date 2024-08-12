@@ -12,8 +12,16 @@ fetch("https://restcountries.com/v3.1/all")
     data.forEach(element => { 
 
        tableBody +=` <tr> 
-                     <td>${element.name.common}</td>
-                     <td>${element.flag}</td>
+                     <td><h1>${element.name.common}</h1>
+                      Official Name : ${element.name.official}
+                      <br>Region : ${element.region}
+                      <br>Capital City : ${element.capital}
+                      <br><a class ="btn btn-primary" href ="${element.maps.googleMaps}">Go to Map</a>
+                      </td>
+
+                     <td><img src ="${element.flags.png}">
+                        
+                     </td>
                     </tr>`
         console.log(element.name.common);
     });
